@@ -1,29 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
+
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Exercício 2</title>
+
 </head>
+
 <body>
 
 	2 – Crie um programa em que em uma palavra digitada pelo usuário sejam substituídas todas as vogais por X.
 	<br>
 	<form method="POST">
-		<input type="text" name="vogal">
+
+		<input type="text" name="palavra">
 		<input type="submit" name="value">
+
 	</form>
 	
 	<?php
 
-		$vogal = $_POST["vogal"];
-		$tam = strlen($vogal);
-		for ($i=0; $i < $tam; $i++) { 
-			if ($vogal[$i] == "a" || $vogal[$i] == "e" || $vogal[$i] == "i" || $vogal[$i] == "o" || $vogal[$i] == "u" ||
-				$vogal[$i] == "A" || $vogal[$i] == "E" || $vogal[$i] == "I" || $vogal[$i] == "O" || $vogal[$i] == "U") {
-				$vogal[$i] = "x";
+		if (isset($_POST["palavra"])) {
+
+			$vogal = $_POST["palavra"];
+			$tamanhoPalavra = strlen($vogal);
+			for ($i=0; $i < $tamanhoPalavra; $i++) { 
+
+				if ($vogal[$i] == "a" || $vogal[$i] == "e" || $vogal[$i] == "i" || $vogal[$i] == "o" || $vogal[$i] == "u" ||
+					$vogal[$i] == "A" || $vogal[$i] == "E" || $vogal[$i] == "I" || $vogal[$i] == "O" || $vogal[$i] == "U") {
+
+					$vogal[$i] = "x";
+
+				}
 			}
+
+			echo "<br/> String sem vogais: ".$vogal;
+
 		}
-		echo "<br/> String sem vogais: ".$vogal;
 
 	?>
 

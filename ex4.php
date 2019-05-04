@@ -1,28 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
+
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Exercício 4</title>
+
 </head>
+
 <body>
 	
 	4 – Exiba a palavra digitada pelo usuário de maneira inversa.
 	<br>
 	<form method="POST">
-		<input type="text" name="valor">
+
+		<input type="text" name="palavra">
 		<input type="submit">
+
 	</form>
 
 	<?php
 
-		$valor = $_POST["valor"];
-		$tam = strlen($valor);
-		echo "Palavra invertida: ";
-		for ($i = $tam - 1; $i >= 0; $i--) { 
-			echo $valor[$i];
+		if (isset($_POST["palavra"])) {
+
+			$palavra = $_POST["palavra"];
+
+			$tamanhoPalavra = strlen($palavra);
+
+			echo "Palavra invertida: ";
+
+			for ($i = $tamanhoPalavra - 1; $i >= 0; $i--) { 
+				echo $palavra[$i];
+			}
+
 		}
 
 	?>
 
 </body>
+
 </html>

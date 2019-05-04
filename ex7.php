@@ -13,15 +13,21 @@
 	7 – Faça um algoritmo que coloque cada primeira letra de cada palavra em maiúscula.
 	<br>
 	<form method="POST">
+
 		<input type="text" name="frase">
 		<input type="submit">
+		
 	</form>
 
 	<?php
 
-		$frase = $_POST["frase"];
+		if (isset($_POST["frase"])) {
 
-		echo ucwords($frase);
+			$frase = $_POST["frase"];
+
+			echo ucwords($frase);
+
+		}
 
 	?>
 	
